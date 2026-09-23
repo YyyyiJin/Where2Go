@@ -1,0 +1,393 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+
+  background-color: white;
+  color: #333;
+}
+
+header {
+  padding: 1.5rem 0;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+
+  text-align: center;
+
+  background-color: #669bbc;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 0.5px;
+
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 1rem 0 0.5rem 0;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ------------------------------
+   Filters Section
+--------------------------------*/
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 1rem;
+
+  width: 90%;
+  margin: 0 4rem;
+}
+
+.filter-card {
+  max-width: 300px;
+  width: 20%;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+  background-color: white;
+
+  transition: transform 0.15s ease;
+}
+
+.filter-card:hover {
+  transform: translateY(-2px);
+}
+
+.filter-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  color: #222;
+}
+
+/* Dropdown for Origin/Date */
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #c9d1e2;
+  border-radius: 8px;
+
+  font-size: 0.875rem;
+
+  background-color: white;
+}
+
+/* ------------------------------
+   Dropdown (Cities + Hours)
+--------------------------------*/
+
+.dropdown {
+  position: relative;
+
+  width: 100%;
+}
+
+.dropdown-selected {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  
+  font-size: 0.6rem;
+
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dropdown-list {
+  position: absolute;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 100%;
+
+  max-height: 220px;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  background-color: #fff;
+}
+
+.dropdown.open .dropdown-list {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0.5rem;
+
+  font-size: 0.875rem;
+
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f3f3f3;
+}
+
+.dropdown-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+
+
+/* ------------------------------
+   Start Button
+--------------------------------*/
+.action-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  margin: 1rem 0;
+}
+
+.action-btn .start-btn,
+.action-btn .refresh-btn {
+  padding: 0.5rem 1rem;
+  margin: 0 1rem;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  background-color: #8ECAE6;
+  color: white;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.action-btn .start-btn:hover,
+.action-btn .refresh-btn:hover {
+  background: #669BBC;
+
+  transform: translateY(-2px);
+}
+
+/* ------------------------------
+   Recommendation Row
+--------------------------------*/
+.recommend-row {
+  text-align: center;
+}
+
+.recommend {
+  font-size: 1.5rem;
+}
+
+/* recommend_note */
+.recommend_note {
+  margin-left: 4rem;
+  font-size: 0.875rem;
+
+  color: gray;
+}
+
+/* ------------------------------
+   Map
+--------------------------------*/
+.map-section {
+  width: 90%;
+  margin: 2rem auto;
+
+  text-align: center;
+}
+
+.map {
+  height: 520px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 5px 16px rgba(0,0,0,0.18);
+
+  overflow: hidden;
+}
+
+.map-section p {
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+/* City label */
+.city-label .city-text {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  font-size: 0.875rem;
+
+  background-color: white;
+}
+
+/* special city mark */
+.best-label .city-text,
+.origin-label .city-text,
+.double-label .city-text {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #d5b37a;
+  border-radius: 6px;
+
+  font-size: 0.875rem;
+
+  background-color: #FDF0D5;
+  color: #8b6b1f;
+}
+
+/* ------------------------------
+   Charts
+--------------------------------*/
+.charts-section {
+  width: 90%;
+  margin: 2rem auto;
+
+  text-align: center;
+}
+
+.chart-card {
+  width: 100%;
+}
+
+.chart-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weather-type-table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  
+
+  font-size: 0.875rem;
+
+  background-color: white;
+
+  overflow: hidden;
+}
+
+.weather-type-table th {
+  padding: 0.75rem;
+
+  font-size: 1rem;
+  text-align: center;
+
+  background-color: #669BBC;
+  color: white;
+}
+
+.weather-type-table td {
+  padding: 0.75rem 0.5rem;
+  border-bottom: 1px solid #eef1f7;
+
+  text-align: center;
+}
+
+.weather-type-table td:first-child,
+.weather-type-table th:first-child {
+  text-align: center;
+}
+
+.weather-type-table tr:hover {
+  background-color: #f7faff;
+}
+
+/* ------------------------------
+   Data Table
+--------------------------------*/
+.data-table-section {
+  width: 90%;
+  margin: 2rem auto;
+
+  text-align: center;
+}
+
+.data-table {
+  overflow: hidden;
+
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+  background-color: white;
+}
+
+.data-table th {
+  padding: 0.875rem;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  background-color: #669BBC;
+  color: white;
+}
+
+.data-table td {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #eef1f7;
+
+  font-size: 0.875rem;
+}
+
+.data-table tr:hover {
+  background-color: #f7faff;
+}
+
+
+/* ------------------------------
+   Mobile Responsive
+--------------------------------*/
+@media (max-width: 900px) {
+  .filters {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .filter-card {
+    width: 45%;
+  }
+
+  .map-section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-card {
+    width: 90%;
+  }
+
+  .recommend-row {
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+}

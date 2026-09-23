@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>🌤️ Where2Go — Destination Recommendation for Seattle</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>🌤️ Where2Go</h1>
+    <h2>Weather-Aware Destination Recommendation for Seattle</h2>
+  </header>
+  <section class="filters">
+
+    <div class="filter-card">
+      <h3>Current Location</h3>
+      <select class="origin-picker"></select>
+    </div>
+
+    <div class="filter-card">
+      <h3>Date</h3>
+      <select class="date-picker"></select>
+    </div>
+
+    <div class="filter-card">
+      <h3>Hours</h3>
+      <div class="dropdown hour-dropdown">
+        <div class="dropdown-selected hour-selected-text">Select Hours</div>
+        <div class="dropdown-list hour-picker"></div>
+      </div>
+    </div>
+
+    <div class="filter-card">
+      <h3>Target Cities</h3>
+      <div class="dropdown city-dropdown">
+        <div class="dropdown-selected city-selected-text">Select Cities</div>
+        <div class="dropdown-list city-picker"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="action-btns">
+    <div class="action-btn">
+      <button class="refresh-btn">Load Data</button>
+      <button class="start-btn">Start</button>
+    </div>
+  </section>
+
+  <section class="summary">
+    <div class="recommend-row">
+      <h3 class="recommend">🌈 Top Recommended city: (No Data Yet)</h3>
+    </div>
+  </section>
+
+  <section class="recommend_note">
+    <div class="rec_note">
+      <p>* The top recommended city is the one that is drier, warmer, less windy, and closer.</p>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="map-section">
+    <h2>🗺️ Recommended Map</h2>
+    <div class="map"></div>
+    <p>📍 indicates Current Location, ⭐ indicates Most Recommended City.</p>
+  </section>
+
+  <!-- chart -->
+  <section class="charts-section">
+    <div class="chart-card">
+      <h2>🌤️ Weather Types by Hour</h2>
+      <div class="weather-type-grid"></div>
+    </div>
+  </section>
+
+  <!-- Table -->
+  <section class="data-table-section">
+    <h2>📊 Metrics Table</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Temp (°C)</th>
+          <th>Rain (%)</th>
+          <th>Wind (mph)</th>
+          <th>Distance (mile)</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
